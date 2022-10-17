@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+option go_package = "github.com/batchcorp/gowest22/build";
+
+package flags;
+
+message SubCommand {
+  // @gotags: kong:"help='Sub action to perform',default='bar'"
+  string action = 1;
+
+  // @gotags: kong:"help='Optional arguments for sub action',optional"
+  repeated string args = 2;
+
+  // @gotags: kong:"help='Number of times to execute',default=1"
+  int64 count = 3;
+}
+
+message Base {
+  // @gotags: kong:"help='Action to perform',default='foo'"
+  string action = 1;
+
+  // @gotags: kong:"cmd,help='Execute subcommand'"
+  SubCommand sub = 2;
+
+  // @gotags: kong:"help='Enable debug output',short=d"
+  bool debug = 3;
+
+  // @gotags: kong:"help='Display plumber version'"
+  string version = 4;
+}
+
+
+
+
+
+
