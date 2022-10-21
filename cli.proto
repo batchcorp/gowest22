@@ -1,12 +1,12 @@
 syntax = "proto3";
 
-option go_package = "github.com/batchcorp/gowest22/build";
+option go_package = "github.com/batchcorp/gowest22/build/go/opts";
 
-package flags;
+package opts;
 
 message SubCommand {
   // @gotags: kong:"help='Sub action to perform',default='bar'"
-  string action = 1;
+  string sub_action = 1;
 
   // @gotags: kong:"help='Optional arguments for sub action',optional"
   repeated string args = 2;
@@ -25,7 +25,7 @@ message Base {
   // @gotags: kong:"help='Enable debug output',short=d"
   bool debug = 3;
 
-  // @gotags: kong:"help='Display plumber version'"
+  // @gotags: kong:"help='Display version'"
   string version = 4;
 }
 
